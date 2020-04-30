@@ -24,13 +24,13 @@ env:
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest, windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ env.NODE_VERSION }}
+    - name: Use Node.js $env.10.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ env.NODE_VERSION }}
+        node-version: ${{ env.10.x }}
     - name: npm install, build, and test
       run: |
         # Build and test the project, then
